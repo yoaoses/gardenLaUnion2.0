@@ -1,0 +1,42 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Standalone output para Docker (reduce tamaño del container significativamente)
+  output: 'standalone',
+
+  // Optimización de imágenes
+  images: {
+    // Formatos modernos
+    formats: ['image/webp', 'image/avif'],
+    // Dominios permitidos para imágenes remotas (agregar si se usa CDN)
+    remotePatterns: [],
+    // Tamaños de dispositivo para responsive
+    deviceSizes: [375, 640, 750, 828, 1080, 1200],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
+
+  // Headers de seguridad adicionales (los principales van en nginx)
+  async headers() {
+    return [
+      {
+        source: '/api/:path*',
+        headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+        ],
+      },
+    ];
+  },
+
+  // Redirect www → sin www (si se configura así)
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/:path*',
+  //       has: [{ type: 'host', value: 'www.gardencollege.cl' }],
+  //       destination: 'https://gardencollege.cl/:path*',
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
+};
+
+module.exports = nextConfig;
