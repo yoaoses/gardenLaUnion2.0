@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================
+   VARIABLES CSS — PALETA GARDEN COLLEGE
+   ============================================= */
+:root {
+  --gc-gold: #C5A835;
+  --gc-gold-light: #D4BC5E;
+  --gc-gold-dark: #9E8529;
+  --gc-navy: #1B2A4A;
+  --gc-navy-light: #2D4470;
+  --gc-red: #C62828;
+  --gc-red-light: #E53935;
+  --gc-white: #FAFAF8;
+  --gc-warm: #FAFAF8;
+  --gc-cream: #F5F0E8;
+  --gc-gray-100: #F0EDE6;
+  --gc-gray-200: #E0DCD4;
+  --gc-gray-500: #8A8578;
+  --gc-gray-700: #4A4640;
+  --gc-gray-900: #2A2825;
+}
+
+/* =============================================
+   BASE
+   ============================================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gc-white text-gc-gray-900 font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  /* Focus visible para accesibilidad */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-gc-gold rounded;
+  }
+}
+
+/* =============================================
+   COMPONENTES — CLASES REUTILIZABLES
+   ============================================= */
+@layer components {
+  /* Contenedor principal del sitio */
+  .container-gc {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Botones */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-gc-gold text-gc-navy font-body font-semibold
+           rounded-xl hover:bg-gc-gold-dark transition-all duration-200
+           shadow-sm hover:shadow-md active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           border-2 border-gc-navy text-gc-navy font-body font-semibold
+           rounded-xl hover:bg-gc-navy hover:text-white transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-6 py-3
+           text-gc-navy/70 font-body font-medium
+           rounded-xl hover:bg-gc-cream hover:text-gc-navy transition-all duration-200;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-md
+           transition-all duration-300 overflow-hidden;
+  }
+
+  /* Secciones */
+  .section-alt {
+    @apply bg-gc-cream;
+  }
+
+  .section-heading {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-gc-navy tracking-tight;
+  }
+
+  .section-subheading {
+    @apply text-lg text-gc-navy/60 font-body max-w-2xl leading-relaxed;
+  }
+
+  /* Badges */
+  .badge-gold {
+    @apply inline-flex items-center px-4 py-1.5
+           bg-gc-gold/10 text-gc-gold-dark text-sm font-semibold
+           rounded-full border border-gc-gold/20;
+  }
+
+  .badge-navy {
+    @apply inline-flex items-center px-4 py-1.5
+           bg-gc-navy/10 text-gc-navy text-sm font-semibold
+           rounded-full border border-gc-navy/20;
+  }
+
+  /* Formularios */
+  .input-gc {
+    @apply w-full px-4 py-3 rounded-xl border border-gc-gray-200
+           bg-white font-body text-gc-gray-900 placeholder-gc-gray-500
+           focus:outline-none focus:border-gc-gold focus:ring-2 focus:ring-gc-gold/20
+           transition-colors duration-200;
+  }
+
+  .label-gc {
+    @apply block text-sm font-body font-medium text-gc-navy/80 mb-1.5;
+  }
+
+  /* Divisor dorado */
+  .gold-divider {
+    @apply w-16 h-1 bg-gc-gold rounded-full;
+  }
+}
+
+/* =============================================
+   UTILIDADES EXTRA
+   ============================================= */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

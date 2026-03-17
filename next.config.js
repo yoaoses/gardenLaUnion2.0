@@ -3,6 +3,11 @@ const nextConfig = {
   // Standalone output para Docker (reduce tamaño del container significativamente)
   output: 'standalone',
 
+  // Evita warning de workspace root con múltiples lockfiles
+  turbopack: {
+    root: __dirname,
+  },
+
   // Optimización de imágenes
   images: {
     // Formatos modernos
