@@ -315,6 +315,19 @@ async function main() {
       orden: 3,
     },
     {
+      clave: "convivencia.testimonio",
+      valor: JSON.stringify({
+        texto:
+          "Lo que más valoro de Garden College es que mi hija llega contenta. Sé que está en un lugar donde la cuidan y la respetan.",
+        nombre: "María González",
+        rol: "Apoderada de 3° básico",
+        iniciales: "MG",
+      }),
+      tipo: "json",
+      grupo: "convivencia",
+      orden: 5,
+    },
+    {
       clave: "convivencia.pilares",
       valor: JSON.stringify([
         {

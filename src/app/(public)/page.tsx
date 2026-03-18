@@ -81,6 +81,7 @@ export default async function HomePage() {
           descripcion={config["convivencia.descripcion"] || ""}
           logros={config["convivencia.logros"] || []}
           pilares={config["convivencia.pilares"] || []}
+          testimonio={config["convivencia.testimonio"] || null}
         />
 
         <EventosDestacados />
