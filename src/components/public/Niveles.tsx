@@ -10,11 +10,11 @@ interface NivelesProps {
   extras: string[];
 }
 
-const nivelColors = [
-  { accent: "bg-gc-gold/10 text-gc-gold-dark border-gc-gold/20" },
-  { accent: "bg-gc-red/10 text-gc-red border-gc-red/20" },
-  { accent: "bg-gc-navy/10 text-gc-navy border-gc-navy/20" },
-  { accent: "bg-emerald-50 text-emerald-700 border-emerald-200" },
+const nivelBorders = [
+  "border-l-4 border-gc-green-light",
+  "border-l-4 border-gc-green",
+  "border-l-4 border-gc-green-dark",
+  "border-l-4 border-gc-green-800",
 ];
 
 export default function Niveles({ niveles, extras }: NivelesProps) {
@@ -33,10 +33,9 @@ export default function Niveles({ niveles, extras }: NivelesProps) {
         {/* Grid de niveles */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-8 lg:mb-12">
           {niveles.map((nivel, i) => {
-            const color = nivelColors[i % nivelColors.length];
             return (
-              <div key={nivel.nombre} className="card p-6 lg:p-8">
-                <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border mb-4 ${color.accent}`}>
+              <div key={nivel.nombre} className={`card p-6 lg:p-8 ${nivelBorders[i % nivelBorders.length]}`}>
+                <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border mb-4 bg-gc-green-50 text-gc-green-dark border-gc-green-100">
                   {nivel.niveles}
                 </div>
                 <h3 className="text-lg font-display font-bold text-gc-navy mb-2">

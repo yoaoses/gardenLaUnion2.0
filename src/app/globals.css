@@ -6,21 +6,36 @@
    VARIABLES CSS — PALETA GARDEN COLLEGE
    ============================================= */
 :root {
-  --gc-gold: #C5A835;
-  --gc-gold-light: #D4BC5E;
-  --gc-gold-dark: #9E8529;
-  --gc-navy: #1B2A4A;
+  /* Verde Jade — protagonista */
+  --gc-green-50:    #EBF5F3;
+  --gc-green-100:   #B8DDD5;
+  --gc-green-light: #5EAA9A;
+  --gc-green:       #3D8578;
+  --gc-green-dark:  #2D6A5F;
+  --gc-green-800:   #1F4F46;
+  --gc-green-900:   #143832;
+  /* Navy — base */
+  --gc-navy-50:    #E8ECF2;
   --gc-navy-light: #2D4470;
-  --gc-red: #C62828;
-  --gc-red-light: #E53935;
-  --gc-white: #FAFAF8;
-  --gc-warm: #FAFAF8;
-  --gc-cream: #F5F0E8;
-  --gc-gray-100: #F0EDE6;
-  --gc-gray-200: #E0DCD4;
-  --gc-gray-500: #8A8578;
-  --gc-gray-700: #4A4640;
-  --gc-gray-900: #2A2825;
+  --gc-navy:       #1B2A4A;
+  --gc-navy-dark:  #111B33;
+  /* Dorado — acento + CTA */
+  --gc-gold-50:    #FAF6EB;
+  --gc-gold-light: #D4B84E;
+  --gc-gold:       #B8943B;
+  --gc-gold-dark:  #7A6A2E;
+  /* Rojo — solo errores */
+  --gc-red:        #C62828;
+  --gc-red-light:  #E53935;
+  /* Neutros */
+  --gc-white:      #FAFAF8;
+  --gc-warm:       #FAFAF8;
+  --gc-cream:      #F7F4ED;
+  --gc-gray-100:   #F0EDE6;
+  --gc-gray-200:   #E0DCD4;
+  --gc-gray-500:   #8A8578;
+  --gc-gray-700:   #4A4640;
+  --gc-gray-900:   #2A2825;
 }
 
 /* =============================================
@@ -59,8 +74,8 @@
   /* Botones */
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3
-           bg-gc-gold text-gc-navy font-body font-semibold
-           rounded-xl hover:bg-gc-gold-dark transition-all duration-200
+           bg-gc-gold text-white font-body font-semibold
+           rounded-xl hover:bg-gc-gold-dark hover:text-white transition-all duration-200
            shadow-sm hover:shadow-md active:scale-[0.98];
   }
 
@@ -78,8 +93,8 @@
 
   /* Cards */
   .card {
-    @apply bg-white rounded-2xl shadow-sm hover:shadow-md
-           transition-all duration-300 overflow-hidden;
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-md border border-transparent
+           hover:border-gc-green/20 transition-all duration-300 overflow-hidden;
   }
 
   /* Secciones */

@@ -9,25 +9,49 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "gc-gold": "#C5A835",
-        "gc-gold-light": "#D4BC5E",
-        "gc-gold-dark": "#9E8529",
-        "gc-navy": "#1B2A4A",
-        "gc-navy-light": "#2D4470",
-        "gc-red": "#C62828",
-        "gc-red-light": "#E53935",
-        "gc-white": "#FAFAF8",
-        "gc-cream": "#F5F0E8",
-        "gc-gray-100": "#F0EDE6",
-        "gc-gray-200": "#E0DCD4",
-        "gc-gray-500": "#8A8578",
-        "gc-gray-700": "#4A4640",
-        "gc-gray-900": "#2A2825",
+        // VERDE JADE — color protagonista (uniforme, tartán)
+        "gc-green": {
+          "50":      "#EBF5F3",
+          "100":     "#B8DDD5",
+          "light":   "#5EAA9A",
+          DEFAULT:   "#3D8578",
+          "dark":    "#2D6A5F",
+          "800":     "#1F4F46",
+          "900":     "#143832",
+        },
+        // NAVY — base oscura (fondo tartán, hero, footer)
+        "gc-navy": {
+          "50":    "#E8ECF2",
+          "light": "#2D4470",
+          DEFAULT: "#1B2A4A",
+          "dark":  "#111B33",
+        },
+        // DORADO — acento divino + CTA principal
+        "gc-gold": {
+          "50":    "#FAF6EB",
+          "light": "#D4B84E",
+          DEFAULT: "#B8943B",
+          "dark":  "#7A6A2E",
+        },
+        // ROJO — solo errores y alertas
+        "gc-red": {
+          DEFAULT: "#C62828",
+          "light": "#E53935",
+        },
+        // Neutros
+        "gc-white":     "#FAFAF8",
+        "gc-warm":      "#FAFAF8",
+        "gc-cream":     "#F7F4ED",
+        "gc-gray-100":  "#F0EDE6",
+        "gc-gray-200":  "#E0DCD4",
+        "gc-gray-500":  "#8A8578",
+        "gc-gray-700":  "#4A4640",
+        "gc-gray-900":  "#2A2825",
         // Alias semánticos
-        "gc-success": "#2E7D32",
-        "gc-warning": "#F57F17",
-        "gc-error": "#C62828",
-        "gc-info": "#1565C0",
+        "gc-success":   "#2E7D32",
+        "gc-warning":   "#F57F17",
+        "gc-error":     "#C62828",
+        "gc-info":      "#1565C0",
       },
       fontFamily: {
         display: ["var(--font-lora)", "Georgia", "serif"],

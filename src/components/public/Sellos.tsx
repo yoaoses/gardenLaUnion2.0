@@ -29,11 +29,6 @@ const iconMap: Record<string, JSX.Element> = {
   ),
 };
 
-const colorSchemes = [
-  { bg: "bg-red-50", iconBg: "bg-gc-red/10", iconColor: "text-gc-red", border: "border-gc-red/20" },
-  { bg: "bg-amber-50", iconBg: "bg-gc-gold/10", iconColor: "text-gc-gold-dark", border: "border-gc-gold/20" },
-  { bg: "bg-slate-50", iconBg: "bg-gc-navy/10", iconColor: "text-gc-navy", border: "border-gc-navy/20" },
-];
 
 export default function Sellos({ sellos }: SellosProps) {
   return (
@@ -50,14 +45,13 @@ export default function Sellos({ sellos }: SellosProps) {
 
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-          {sellos.map((sello, i) => {
-            const colors = colorSchemes[i % colorSchemes.length];
+          {sellos.map((sello) => {
             return (
               <div
                 key={sello.titulo}
-                className={`card p-8 lg:p-10 border ${colors.border} hover:border-transparent`}
+                className="card p-8 lg:p-10 border border-gc-green-100"
               >
-                <div className={`w-16 h-16 rounded-2xl ${colors.iconBg} flex items-center justify-center mb-6 ${colors.iconColor}`}>
+                <div className="w-16 h-16 rounded-2xl bg-gc-green-50 flex items-center justify-center mb-6 text-gc-green-dark">
                   {iconMap[sello.icono] || iconMap["globe"]}
                 </div>
                 <h3 className="text-xl lg:text-2xl font-display font-bold text-gc-navy mb-4">

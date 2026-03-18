@@ -11,7 +11,7 @@ export default function Hero({ nombre, slogan, mision }: HeroProps) {
       className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background — gradiente con textura sutil */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gc-navy via-gc-navy-light to-gc-navy" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gc-navy-dark via-gc-navy to-gc-navy" />
 
       {/* Patrón decorativo sutil */}
       <div
@@ -30,7 +30,7 @@ export default function Hero({ nombre, slogan, mision }: HeroProps) {
       <div className="relative container-gc text-center py-20 sm:py-24 lg:py-32">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-          <div className="w-2 h-2 rounded-full bg-gc-gold animate-pulse" />
+          <div className="w-2 h-2 rounded-full bg-gc-green animate-pulse" />
           <span className="text-white/80 text-sm font-body">
             Desde 2004 en La Unión, Región de Los Ríos
           </span>
@@ -42,7 +42,7 @@ export default function Hero({ nombre, slogan, mision }: HeroProps) {
         </h1>
 
         {/* Línea dorada decorativa */}
-        <div className="w-24 h-1 bg-gc-gold mx-auto mb-6 rounded-full" />
+        <div className="w-24 h-1 bg-gc-green mx-auto mb-6 rounded-full" />
 
         {/* Slogan */}
         <p className="text-xl sm:text-2xl lg:text-3xl text-gc-gold-light font-display font-medium mb-8">

@@ -39,7 +39,7 @@ export default function Convivencia({
   return (
     <section id="convivencia" className="py-12 sm:py-16 lg:py-20 xl:py-28 relative overflow-hidden">
       {/* Background decorativo */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gc-navy via-gc-navy to-gc-navy-light" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gc-navy-dark via-gc-navy to-gc-navy" />
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -90,7 +90,7 @@ export default function Convivencia({
                 key={pilar.titulo}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors"
               >
-                <div className="w-12 h-12 rounded-xl bg-gc-gold/20 text-gc-gold-light flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-xl bg-gc-green/20 text-gc-green-light flex items-center justify-center mb-6">
                   {pilarIcons[i % pilarIcons.length]}
                 </div>
                 <h3 className="text-xl font-display font-bold text-white mb-3">

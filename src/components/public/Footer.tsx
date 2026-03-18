@@ -21,14 +21,14 @@ export default function Footer({ nombre, corporacion, redes }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gc-navy text-white/70">
+    <footer className="bg-gc-navy-dark text-white/70">
       {/* Contenido principal */}
       <div className="container-gc py-12 lg:py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Logo + info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-gc-gold/20 flex items-center justify-center font-display font-bold text-gc-gold">
+              <div className="w-10 h-10 rounded-full bg-gc-green flex items-center justify-center font-display font-bold text-gc-gold">
                 GC
               </div>
               <span className="font-display font-bold text-white text-lg">
@@ -55,7 +55,7 @@ export default function Footer({ nombre, corporacion, redes }: FooterProps) {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm font-body hover:text-gc-gold-light transition-colors"
+                    className="text-sm font-body hover:text-gc-green-light transition-colors"
                   >
                     {link.label}
                   </a>
@@ -71,22 +71,22 @@ export default function Footer({ nombre, corporacion, redes }: FooterProps) {
             </h4>
             <ul className="space-y-2">
               <li>
-                <a href="/documentos" className="text-sm font-body hover:text-gc-gold-light transition-colors">
+                <a href="/documentos" className="text-sm font-body hover:text-gc-green-light transition-colors">
                   Proyecto Educativo (PEI)
                 </a>
               </li>
               <li>
-                <a href="/documentos" className="text-sm font-body hover:text-gc-gold-light transition-colors">
+                <a href="/documentos" className="text-sm font-body hover:text-gc-green-light transition-colors">
                   Reglamento de Convivencia
                 </a>
               </li>
               <li>
-                <a href="/documentos" className="text-sm font-body hover:text-gc-gold-light transition-colors">
+                <a href="/documentos" className="text-sm font-body hover:text-gc-green-light transition-colors">
                   Reglamento de Evaluación
                 </a>
               </li>
               <li>
-                <a href="/documentos" className="text-sm font-body hover:text-gc-gold-light transition-colors">
+                <a href="/documentos" className="text-sm font-body hover:text-gc-green-light transition-colors">
                   Ver todos los documentos →
                 </a>
               </li>

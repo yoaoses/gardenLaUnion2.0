@@ -49,8 +49,8 @@ export default function Navbar({ nombre, telefono, variant = "transparent" }: Na
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isLight
-          ? "bg-white/95 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b-2 border-gc-green"
+          : "bg-transparent border-b-2 border-gc-green/40"
       }`}
     >
       {/* Barra superior — solo desktop */}
@@ -73,8 +73,8 @@ export default function Navbar({ nombre, telefono, variant = "transparent" }: Na
             <div
               className={`w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center font-display font-bold transition-colors ${
                 isLight
-                  ? "bg-gc-navy text-gc-gold"
-                  : "bg-white/20 text-white backdrop-blur-sm"
+                  ? "bg-gc-green text-gc-gold"
+                  : "bg-gc-green/80 text-gc-gold-light backdrop-blur-sm"
               }`}
             >
               GC
@@ -99,11 +99,11 @@ export default function Navbar({ nombre, telefono, variant = "transparent" }: Na
                 className={`px-3 py-2 text-sm font-body font-medium rounded-lg transition-colors ${
                   link.external && pathname === "/documentos"
                     ? isLight
-                      ? "text-gc-gold-dark font-semibold hover:bg-gc-cream"
-                      : "text-gc-gold-light font-semibold hover:bg-white/10"
+                      ? "text-gc-gold-dark font-semibold hover:bg-gc-green/10"
+                      : "text-gc-gold-light font-semibold hover:bg-gc-green/10"
                     : isLight
-                    ? "text-gc-navy/70 hover:text-gc-navy hover:bg-gc-cream"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
+                    ? "text-gc-navy/70 hover:text-gc-navy hover:bg-gc-green/10"
+                    : "text-white/80 hover:text-white hover:bg-gc-green/10"
                 }`}
               >
                 {link.label}
@@ -122,8 +122,8 @@ export default function Navbar({ nombre, telefono, variant = "transparent" }: Na
             onClick={() => setIsOpen(!isOpen)}
             className={`lg:hidden p-2 rounded-lg transition-colors ${
               isLight
-                ? "text-gc-navy hover:bg-gc-cream"
-                : "text-white hover:bg-white/10"
+                ? "text-gc-navy hover:bg-gc-green/10"
+                : "text-white hover:bg-gc-green/10"
             }`}
             aria-label="Menú"
           >
@@ -162,7 +162,7 @@ export default function Navbar({ nombre, telefono, variant = "transparent" }: Na
                 key={link.href}
                 href={resolveHref(link)}
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 text-gc-navy font-body font-medium rounded-lg hover:bg-gc-cream transition-colors"
+                className="block px-4 py-3 text-gc-navy font-body font-medium rounded-lg hover:bg-gc-green/10 transition-colors"
               >
                 {link.label}
               </a>
