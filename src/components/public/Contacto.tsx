@@ -14,10 +14,10 @@ interface ContactoProps {
 
 export default function Contacto({ sedes, email }: ContactoProps) {
   return (
-    <section id="contacto" className="py-20 lg:py-28">
+    <section id="contacto" className="py-12 sm:py-16 lg:py-20 xl:py-28">
       <div className="container-gc">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 lg:mb-16">
           <span className="badge-gold mb-4 inline-block">Estamos cerca</span>
           <h2 className="section-heading">Contacto</h2>
           <p className="section-subheading mx-auto mt-4">

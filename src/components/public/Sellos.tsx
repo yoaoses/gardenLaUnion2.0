@@ -37,10 +37,10 @@ const colorSchemes = [
 
 export default function Sellos({ sellos }: SellosProps) {
   return (
-    <section id="sellos" className="py-20 lg:py-28 section-alt">
+    <section id="sellos" className="py-12 sm:py-16 lg:py-20 xl:py-28 section-alt">
       <div className="container-gc">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 lg:mb-16">
           <span className="badge-gold mb-4 inline-block">Lo que nos distingue</span>
           <h2 className="section-heading">Sellos Educativos</h2>
           <p className="section-subheading mx-auto mt-4">

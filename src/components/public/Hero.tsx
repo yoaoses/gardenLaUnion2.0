@@ -8,7 +8,7 @@ export default function Hero({ nombre, slogan, mision }: HeroProps) {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background — gradiente con textura sutil */}
       <div className="absolute inset-0 bg-gradient-to-br from-gc-navy via-gc-navy-light to-gc-navy" />
@@ -27,7 +27,7 @@ export default function Hero({ nombre, slogan, mision }: HeroProps) {
       <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-gc-gold/5 blur-3xl -translate-x-1/2 translate-y-1/2" />
 
       {/* Contenido */}
-      <div className="relative container-gc text-center py-32 lg:py-40">
+      <div className="relative container-gc text-center py-20 sm:py-24 lg:py-32">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 mb-8">
           <div className="w-2 h-2 rounded-full bg-gc-gold animate-pulse" />

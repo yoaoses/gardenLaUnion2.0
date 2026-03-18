@@ -10,17 +10,17 @@ export default function QuienesSomos({
   resena,
 }: QuienesSomosProps) {
   return (
-    <section id="quienes-somos" className="py-20 lg:py-28">
+    <section id="quienes-somos" className="py-12 sm:py-16 lg:py-20 xl:py-28">
       <div className="container-gc">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 lg:mb-16">
           <span className="badge-gold mb-4 inline-block">Nuestra historia</span>
           <h2 className="section-heading">Quiénes Somos</h2>
         </div>
 
         {/* Reseña */}
         {resena && (
-          <div className="max-w-3xl mx-auto mb-16">
+          <div className="max-w-3xl mx-auto mb-10 lg:mb-16">
             <p className="text-gc-navy/70 font-body text-lg leading-relaxed text-center">
               {resena}
             </p>
@@ -85,7 +85,7 @@ export default function QuienesSomos({
         </div>
 
         {/* Datos institucionales */}
-        <div className="flex flex-wrap justify-center gap-8 mt-16">
+        <div className="flex flex-wrap justify-center gap-8 mt-10 lg:mt-16">
           {[
             { valor: "2004", label: "Año de fundación" },
             { valor: "2019", label: "Educación Adventista" },

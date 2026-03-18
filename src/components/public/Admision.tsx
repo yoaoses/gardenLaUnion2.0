@@ -5,7 +5,7 @@ interface AdmisionProps {
 
 export default function Admision({ info, linkSae }: AdmisionProps) {
   return (
-    <section id="admision" className="py-20 lg:py-28 section-alt">
+    <section id="admision" className="py-12 sm:py-16 lg:py-20 xl:py-28 section-alt">
       <div className="container-gc">
         <div className="max-w-4xl mx-auto">
           {/* Header */}

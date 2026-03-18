@@ -19,10 +19,10 @@ const nivelColors = [
 
 export default function Niveles({ niveles, extras }: NivelesProps) {
   return (
-    <section id="niveles" className="py-20 lg:py-28">
+    <section id="niveles" className="py-12 sm:py-16 lg:py-20 xl:py-28">
       <div className="container-gc">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 lg:mb-16">
           <span className="badge-navy mb-4 inline-block">Formación completa</span>
           <h2 className="section-heading">Niveles Educativos</h2>
           <p className="section-subheading mx-auto mt-4">
@@ -31,7 +31,7 @@ export default function Niveles({ niveles, extras }: NivelesProps) {
         </div>
 
         {/* Grid de niveles */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-8 lg:mb-12">
           {niveles.map((nivel, i) => {
             const color = nivelColors[i % nivelColors.length];
             return (

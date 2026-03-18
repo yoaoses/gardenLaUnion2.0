@@ -37,7 +37,7 @@ export default function Convivencia({
   pilares,
 }: ConvivenciaProps) {
   return (
-    <section id="convivencia" className="py-20 lg:py-28 relative overflow-hidden">
+    <section id="convivencia" className="py-12 sm:py-16 lg:py-20 xl:py-28 relative overflow-hidden">
       {/* Background decorativo */}
       <div className="absolute inset-0 bg-gradient-to-br from-gc-navy via-gc-navy to-gc-navy-light" />
       <div
@@ -51,7 +51,7 @@ export default function Convivencia({
 
       <div className="relative container-gc">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 lg:mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-gc-gold/20 text-gc-gold-light text-sm font-semibold rounded-full mb-4">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
@@ -68,7 +68,7 @@ export default function Convivencia({
 
         {/* Logros en números */}
         {logros.length > 0 && (
-          <div className="flex flex-wrap justify-center gap-8 lg:gap-16 mb-20">
+          <div className="flex flex-wrap justify-center gap-6 lg:gap-12 mb-10 lg:mb-16">
             {logros.map((logro) => (
               <div key={logro.descripcion} className="text-center">
                 <div className="text-5xl lg:text-6xl font-display font-bold text-gc-gold mb-2">
