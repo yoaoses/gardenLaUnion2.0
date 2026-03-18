@@ -4,6 +4,7 @@ import Hero from "@/components/public/Hero";
 import QuienesSomos from "@/components/public/QuienesSomos";
 import Sellos from "@/components/public/Sellos";
 import Convivencia from "@/components/public/Convivencia";
+import EventosDestacados from "@/components/public/EventosDestacados";
 import Niveles from "@/components/public/Niveles";
 import Noticias from "@/components/public/Noticias";
 import Admision from "@/components/public/Admision";
@@ -81,6 +82,8 @@ export default async function HomePage() {
           logros={config["convivencia.logros"] || []}
           pilares={config["convivencia.pilares"] || []}
         />
+
+        <EventosDestacados />
 
         <Niveles
           niveles={config["niveles.info"] || []}

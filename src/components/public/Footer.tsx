@@ -11,6 +11,7 @@ interface FooterProps {
 const footerLinks = [
   { label: "Quiénes Somos", href: "#quienes-somos" },
   { label: "Sellos Educativos", href: "#sellos" },
+  { label: "Eventos", href: "#eventos" },
   { label: "Niveles", href: "#niveles" },
   { label: "Noticias", href: "#noticias" },
   { label: "Admisión", href: "#admision" },
@@ -21,7 +22,7 @@ export default function Footer({ nombre, corporacion, redes }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gc-navy-dark text-white/70">
+    <footer className="bg-gc-green-900 text-white/70">
       {/* Contenido principal */}
       <div className="container-gc py-12 lg:py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">

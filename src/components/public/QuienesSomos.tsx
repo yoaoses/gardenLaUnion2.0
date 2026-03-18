@@ -21,7 +21,7 @@ export default function QuienesSomos({
         {/* Reseña */}
         {resena && (
           <div className="max-w-3xl mx-auto mb-10 lg:mb-16">
-            <p className="text-gc-navy/70 font-body text-lg leading-relaxed text-center">
+            <p className="text-gc-green-800/70 font-body text-lg leading-relaxed text-center">
               {resena}
             </p>
           </div>
@@ -47,17 +47,17 @@ export default function QuienesSomos({
               </svg>
             </div>
             <div className="w-12 h-0.5 bg-gc-gold rounded-full mb-4" />
-            <h3 className="text-xl font-display font-bold text-gc-navy mb-4">
+            <h3 className="text-xl font-display font-bold text-gc-green-800 mb-4">
               Misión
             </h3>
-            <p className="text-gc-navy/70 font-body leading-relaxed">{mision}</p>
+            <p className="text-gc-green-800/70 font-body leading-relaxed">{mision}</p>
           </div>
 
           {/* Visión */}
           <div className="card p-8 lg:p-10">
-            <div className="w-12 h-12 rounded-2xl bg-gc-navy/5 flex items-center justify-center mb-6">
+            <div className="w-12 h-12 rounded-2xl bg-gc-green/10 flex items-center justify-center mb-6">
               <svg
-                className="w-6 h-6 text-gc-navy"
+                className="w-6 h-6 text-gc-green-800"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -76,11 +76,11 @@ export default function QuienesSomos({
                 />
               </svg>
             </div>
-            <div className="w-12 h-0.5 bg-gc-navy/30 rounded-full mb-4" />
-            <h3 className="text-xl font-display font-bold text-gc-navy mb-4">
+            <div className="w-12 h-0.5 bg-gc-green/30 rounded-full mb-4" />
+            <h3 className="text-xl font-display font-bold text-gc-green-800 mb-4">
               Visión
             </h3>
-            <p className="text-gc-navy/70 font-body leading-relaxed">{vision}</p>
+            <p className="text-gc-green-800/70 font-body leading-relaxed">{vision}</p>
           </div>
         </div>
 
@@ -96,7 +96,7 @@ export default function QuienesSomos({
               <div className="text-3xl font-display font-bold text-gc-gold">
                 {dato.valor}
               </div>
-              <div className="text-sm text-gc-navy/50 font-body mt-1">
+              <div className="text-sm text-gc-green-800/50 font-body mt-1">
                 {dato.label}
               </div>
             </div>

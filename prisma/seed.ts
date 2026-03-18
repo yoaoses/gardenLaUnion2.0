@@ -1,4 +1,4 @@
-import { PrismaClient, Role } from "@prisma/client";
+import { PrismaClient, Role, NoticiaEstado } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -338,6 +338,29 @@ async function main() {
       orden: 4,
     },
 
+    // Eventos
+    {
+      clave: "eventos.titulo",
+      valor: "Eventos Garden",
+      tipo: "text",
+      grupo: "eventos",
+      orden: 1,
+    },
+    {
+      clave: "eventos.subtitulo",
+      valor: "Tradiciones que construyen comunidad cada año",
+      tipo: "text",
+      grupo: "eventos",
+      orden: 2,
+    },
+    {
+      clave: "eventos.badge",
+      valor: "Lo que vivimos",
+      tipo: "text",
+      grupo: "eventos",
+      orden: 3,
+    },
+
     // Niveles educativos
     {
       clave: "niveles.info",
@@ -449,6 +472,119 @@ async function main() {
 
     console.log("✅ Noticia de ejemplo creada");
   }
+
+  // --- Eventos con ediciones 2025 ---
+  const eventosData = [
+    {
+      nombre: "Gala Cultural",
+      slug: "gala-cultural",
+      descripcion: "Celebración artística anual del colegio",
+      recurrencia: "anual",
+      edicion: {
+        titulo: "20 años celebrados con música, comunidad y gratitud",
+        slug: "gala-cultural-2025",
+        extracto:
+          "Una noche de alto nivel artístico y profundo sentido comunitario que reunió a estudiantes, familias y autoridades.",
+        contenido:
+          "<p>En el marco de nuestro 20° aniversario, Garden College inauguró su Primera Gala Cultural. Una noche de alto nivel artístico y profundo sentido comunitario que reunió a estudiantes, familias, docentes y autoridades locales.</p><p>El evento destacó presentaciones musicales, números artísticos preparados por los departamentos de Música y Artes, y un emotivo reconocimiento a quienes han sido parte de estas dos décadas de historia educativa en La Unión.</p>",
+        fecha: new Date("2025-10-21"),
+        destacada: true,
+        estado: NoticiaEstado.PUBLICADA,
+      },
+    },
+    {
+      nombre: "Spelling Bee",
+      slug: "spelling-bee",
+      descripcion: "Competencia de inglés entre estudiantes",
+      recurrencia: "anual",
+      edicion: {
+        titulo: "Letras, nervios y aplausos que se comparten",
+        slug: "spelling-bee-2025",
+        extracto:
+          "Estudiantes de básica y media demostraron su dominio del inglés en una jornada limpia y ordenada.",
+        contenido:
+          "<p>El Spelling Bee 2025 fue una jornada que puso a prueba el vocabulario y la pronunciación de nuestros estudiantes. Desde los primeros niveles de básica hasta cuarto medio, cada participante demostró su dedicación al aprendizaje del inglés.</p><p>El evento contó con la presencia de familias y docentes que celebraron cada acierto con aplausos y aliento. Una tradición que reafirma el sello inglés de Garden College.</p>",
+        fecha: new Date("2025-08-15"),
+        destacada: false,
+        estado: NoticiaEstado.PUBLICADA,
+      },
+    },
+    {
+      nombre: "Bingo Familiar",
+      slug: "bingo-familiar",
+      descripcion: "Actividad comunitaria del CGPA",
+      recurrencia: "anual",
+      edicion: {
+        titulo: "Primer Gran Bingo Familiar de Garden College",
+        slug: "bingo-familiar-2025",
+        extracto:
+          "El CGPA organizó una jornada que reunió a toda la comunidad educativa.",
+        contenido:
+          "<p>El Centro General de Padres y Apoderados organizó el Primer Gran Bingo Familiar de Garden College, una actividad que convocó a familias, estudiantes y docentes en torno a la diversión y la comunidad.</p><p>La jornada fue un éxito rotundo: entretenimiento para todas las edades, premios y la calidez característica de nuestra comunidad educativa.</p>",
+        fecha: new Date("2025-07-04"),
+        destacada: false,
+        estado: NoticiaEstado.PUBLICADA,
+      },
+    },
+    {
+      nombre: "Campeonatos Deportivos",
+      slug: "campeonatos-deportivos",
+      descripcion: "Representación deportiva del colegio",
+      recurrencia: "anual",
+      edicion: {
+        titulo: "Campeonato comunal de tenis de mesa",
+        slug: "campeonatos-deportivos-2025",
+        extracto:
+          "Estudiantes demostraron talento y espíritu competitivo representando al colegio.",
+        contenido:
+          "<p>Nuestros estudiantes representaron a Garden College en el campeonato comunal de tenis de mesa, una disciplina que combina concentración, reflejos y estrategia.</p><p>Con espíritu competitivo y juego limpio, nuestros deportistas dejaron el nombre del colegio en alto. El Departamento de Educación Física y Salud continúa impulsando la participación deportiva como parte esencial de la formación integral.</p>",
+        fecha: new Date("2025-09-10"),
+        destacada: false,
+        estado: NoticiaEstado.PUBLICADA,
+      },
+    },
+    {
+      nombre: "Día del Profesor",
+      slug: "dia-del-profesor",
+      descripcion: "Reconocimiento anual a los docentes",
+      recurrencia: "anual",
+      edicion: {
+        titulo: "Una comunidad que reconoce, celebra y elige futuro",
+        slug: "dia-del-profesor-2025",
+        extracto:
+          "El CGPA invitó a los funcionarios a una once de camaradería.",
+        contenido:
+          "<p>El Día del Profesor 2025 fue una jornada especial donde la comunidad Garden expresó su gratitud a quienes dedican su vida a formar personas. El Centro General de Padres y Apoderados organizó una once de camaradería que reunió a docentes y asistentes de la educación.</p><p>Palabras, gestos y presencia — así celebramos a quienes construyen cada día el futuro de nuestros estudiantes.</p>",
+        fecha: new Date("2025-10-16"),
+        destacada: false,
+        estado: NoticiaEstado.PUBLICADA,
+      },
+    },
+  ];
+
+  for (const eventoData of eventosData) {
+    const evento = await prisma.evento.upsert({
+      where: { slug: eventoData.slug },
+      update: {},
+      create: {
+        nombre: eventoData.nombre,
+        slug: eventoData.slug,
+        descripcion: eventoData.descripcion,
+        recurrencia: eventoData.recurrencia,
+      },
+    });
+
+    await prisma.edicion.upsert({
+      where: { slug: eventoData.edicion.slug },
+      update: {},
+      create: {
+        ...eventoData.edicion,
+        eventoId: evento.id,
+      },
+    });
+  }
+
+  console.log(`✅ ${eventosData.length} eventos con ediciones creados`);
 
   console.log("🎉 Seed completado");
 }

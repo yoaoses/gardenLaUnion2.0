@@ -38,13 +38,13 @@ export default function Niveles({ niveles, extras }: NivelesProps) {
                 <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border mb-4 bg-gc-green-50 text-gc-green-dark border-gc-green-100">
                   {nivel.niveles}
                 </div>
-                <h3 className="text-lg font-display font-bold text-gc-navy mb-2">
+                <h3 className="text-lg font-display font-bold text-gc-green-800 mb-2">
                   {nivel.nombre}
                 </h3>
-                <p className="text-gc-navy/60 font-body text-sm leading-relaxed mb-4">
+                <p className="text-gc-green-800/60 font-body text-sm leading-relaxed mb-4">
                   {nivel.descripcion}
                 </p>
-                <div className="flex items-center gap-2 text-xs text-gc-navy/40 font-body">
+                <div className="flex items-center gap-2 text-xs text-gc-green-800/40 font-body">
                   <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                       d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -61,14 +61,14 @@ export default function Niveles({ niveles, extras }: NivelesProps) {
         {/* Programas extras */}
         {extras.length > 0 && (
           <div className="max-w-4xl mx-auto">
-            <p className="text-center text-sm font-body font-semibold text-gc-navy/40 uppercase tracking-wider mb-4">
+            <p className="text-center text-sm font-body font-semibold text-gc-green-800/40 uppercase tracking-wider mb-4">
               Programas y departamentos
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {extras.map((extra) => (
                 <span
                   key={extra}
-                  className="px-4 py-2 bg-gc-cream text-gc-navy/70 font-body text-sm rounded-full border border-gc-gray-200"
+                  className="px-4 py-2 bg-gc-green-50 text-gc-green-800 font-body text-sm rounded-full border border-gc-green-100"
                 >
                   {extra}
                 </span>

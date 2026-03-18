@@ -14,6 +14,7 @@ const navLinks = [
   { label: "Quiénes Somos", href: "#quienes-somos" },
   { label: "Sellos", href: "#sellos" },
   { label: "Convivencia", href: "#convivencia" },
+  { label: "Eventos", href: "#eventos" },
   { label: "Niveles", href: "#niveles" },
   { label: "Noticias", href: "#noticias" },
   { label: "Contacto", href: "#contacto" },
@@ -24,19 +25,19 @@ export default function Navbar({ nombre, telefono, variant = "transparent" }: Na
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const isDocPage = pathname === "/documentos";
+  const isOnepage = pathname === "/";
 
   // En modo solid siempre se comporta como si estuviera scrolled
   const isLight = variant === "solid" || scrolled;
 
-  // En /documentos los anchors deben volver a la onepage
+  // Fuera de la onepage, los anchors deben volver a /#seccion
   const resolveHref = (link: { href: string; external?: boolean }) => {
     if (link.external) return link.href;
-    if (isDocPage && link.href.startsWith("#")) return `/${link.href}`;
+    if (!isOnepage && link.href.startsWith("#")) return `/${link.href}`;
     return link.href;
   };
 
-  const logoHref = isDocPage ? "/" : "#inicio";
+  const logoHref = isOnepage ? "#inicio" : "/";
 
   useEffect(() => {
     if (variant === "solid") return;
@@ -49,13 +50,13 @@ export default function Navbar({ nombre, telefono, variant = "transparent" }: Na
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isLight
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b-2 border-gc-green"
-          : "bg-transparent border-b-2 border-gc-green/40"
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b-2 border-gc-navy"
+          : "bg-transparent border-b-2 border-gc-navy/50"
       }`}
     >
       {/* Barra superior — solo desktop */}
       {!isLight && (
-        <div className="hidden lg:block bg-gc-navy text-white/80 text-sm">
+        <div className="hidden lg:block bg-gc-green-800 text-white/80 text-sm">
           <div className="container-gc flex justify-between items-center py-1.5">
             <span className="font-body">{telefono}</span>
             <span className="font-body text-gc-gold-light">
@@ -82,7 +83,7 @@ export default function Navbar({ nombre, telefono, variant = "transparent" }: Na
             <div>
               <span
                 className={`font-display font-bold text-lg lg:text-xl transition-colors ${
-                  isLight ? "text-gc-navy" : "text-white"
+                  isLight ? "text-gc-green-800" : "text-white"
                 }`}
               >
                 {nombre}
@@ -102,7 +103,7 @@ export default function Navbar({ nombre, telefono, variant = "transparent" }: Na
                       ? "text-gc-gold-dark font-semibold hover:bg-gc-green/10"
                       : "text-gc-gold-light font-semibold hover:bg-gc-green/10"
                     : isLight
-                    ? "text-gc-navy/70 hover:text-gc-navy hover:bg-gc-green/10"
+                    ? "text-gc-green-800/70 hover:text-gc-green-800 hover:bg-gc-green/10"
                     : "text-white/80 hover:text-white hover:bg-gc-green/10"
                 }`}
               >
@@ -110,7 +111,7 @@ export default function Navbar({ nombre, telefono, variant = "transparent" }: Na
               </a>
             ))}
             <a
-              href={isDocPage ? "/#admision" : "#admision"}
+              href={!isOnepage ? "/#admision" : "#admision"}
               className="btn-primary ml-3 text-sm !py-2"
             >
               Admisión
@@ -122,7 +123,7 @@ export default function Navbar({ nombre, telefono, variant = "transparent" }: Na
             onClick={() => setIsOpen(!isOpen)}
             className={`lg:hidden p-2 rounded-lg transition-colors ${
               isLight
-                ? "text-gc-navy hover:bg-gc-green/10"
+                ? "text-gc-green-800 hover:bg-gc-green/10"
                 : "text-white hover:bg-gc-green/10"
             }`}
             aria-label="Menú"
@@ -162,14 +163,14 @@ export default function Navbar({ nombre, telefono, variant = "transparent" }: Na
                 key={link.href}
                 href={resolveHref(link)}
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 text-gc-navy font-body font-medium rounded-lg hover:bg-gc-green/10 transition-colors"
+                className="block px-4 py-3 text-gc-green-800 font-body font-medium rounded-lg hover:bg-gc-green/10 transition-colors"
               >
                 {link.label}
               </a>
             ))}
             <div className="pt-2">
               <a
-                href={isDocPage ? "/#admision" : "#admision"}
+                href={!isOnepage ? "/#admision" : "#admision"}
                 onClick={() => setIsOpen(false)}
                 className="btn-primary w-full text-center"
               >

@@ -30,7 +30,7 @@ export default function Contacto({ sedes, email }: ContactoProps) {
           <div className="lg:col-span-2 space-y-6">
             {sedes.map((sede) => (
               <div key={sede.nombre} className="p-6 bg-gc-cream rounded-2xl">
-                <h3 className="text-lg font-display font-bold text-gc-navy mb-3">
+                <h3 className="text-lg font-display font-bold text-gc-green-800 mb-3">
                   {sede.nombre}
                 </h3>
                 <div className="space-y-2">
@@ -39,7 +39,7 @@ export default function Contacto({ sedes, email }: ContactoProps) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
-                    <span className="text-gc-navy/70 font-body text-sm">{sede.direccion}</span>
+                    <span className="text-gc-green-800/70 font-body text-sm">{sede.direccion}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <svg className="w-5 h-5 text-gc-gold-dark shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,7 +48,7 @@ export default function Contacto({ sedes, email }: ContactoProps) {
                     </svg>
                     <a
                       href={`tel:${sede.telefono.replace(/[^\d+]/g, "")}`}
-                      className="text-gc-navy/70 font-body text-sm hover:text-gc-gold-dark transition-colors"
+                      className="text-gc-green-800/70 font-body text-sm hover:text-gc-gold-dark transition-colors"
                     >
                       {sede.telefono}
                     </a>
@@ -58,7 +58,7 @@ export default function Contacto({ sedes, email }: ContactoProps) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
                         d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
                     </svg>
-                    <span className="text-gc-navy/70 font-body text-sm">{sede.niveles}</span>
+                    <span className="text-gc-green-800/70 font-body text-sm">{sede.niveles}</span>
                   </div>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export default function Contacto({ sedes, email }: ContactoProps) {
                   </svg>
                   <a
                     href={`mailto:${email}`}
-                    className="text-gc-navy/70 font-body text-sm hover:text-gc-gold-dark transition-colors"
+                    className="text-gc-green-800/70 font-body text-sm hover:text-gc-gold-dark transition-colors"
                   >
                     {email}
                   </a>
@@ -86,7 +86,7 @@ export default function Contacto({ sedes, email }: ContactoProps) {
           {/* Formulario */}
           <div className="lg:col-span-3">
             <div className="bg-white p-6 lg:p-8 rounded-2xl border border-gray-100 shadow-sm">
-              <h3 className="text-xl font-display font-bold text-gc-navy mb-6">
+              <h3 className="text-xl font-display font-bold text-gc-green-800 mb-6">
                 Envíanos un mensaje
               </h3>
               <ContactForm />

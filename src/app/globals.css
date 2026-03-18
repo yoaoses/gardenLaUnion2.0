@@ -81,14 +81,14 @@
 
   .btn-secondary {
     @apply inline-flex items-center justify-center px-6 py-3
-           border-2 border-gc-navy text-gc-navy font-body font-semibold
-           rounded-xl hover:bg-gc-navy hover:text-white transition-all duration-200;
+           border-2 border-gc-green-800 text-gc-green-800 font-body font-semibold
+           rounded-xl hover:bg-gc-green-800 hover:text-white transition-all duration-200;
   }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center px-6 py-3
-           text-gc-navy/70 font-body font-medium
-           rounded-xl hover:bg-gc-cream hover:text-gc-navy transition-all duration-200;
+           text-gc-green-800/70 font-body font-medium
+           rounded-xl hover:bg-gc-cream hover:text-gc-green-800 transition-all duration-200;
   }
 
   /* Cards */
@@ -103,11 +103,11 @@
   }
 
   .section-heading {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-gc-navy tracking-tight;
+    @apply text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-gc-green-800 tracking-tight;
   }
 
   .section-subheading {
-    @apply text-lg text-gc-navy/60 font-body max-w-2xl leading-relaxed;
+    @apply text-lg text-gc-green-800/60 font-body max-w-2xl leading-relaxed;
   }
 
   /* Badges */
@@ -119,8 +119,8 @@
 
   .badge-navy {
     @apply inline-flex items-center px-4 py-1.5
-           bg-gc-navy/10 text-gc-navy text-sm font-semibold
-           rounded-full border border-gc-navy/20;
+           bg-gc-green/10 text-gc-green-dark text-sm font-semibold
+           rounded-full border border-gc-green/20;
   }
 
   /* Formularios */
@@ -132,7 +132,7 @@
   }
 
   .label-gc {
-    @apply block text-sm font-body font-medium text-gc-navy/80 mb-1.5;
+    @apply block text-sm font-body font-medium text-gc-green-800/80 mb-1.5;
   }
 
   /* Divisor dorado */

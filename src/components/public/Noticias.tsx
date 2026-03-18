@@ -73,7 +73,7 @@ export default async function Noticias() {
                     {noticia.categorias.slice(0, 2).map((cat) => (
                       <span
                         key={cat.slug}
-                        className="px-2.5 py-1 bg-white/90 backdrop-blur-sm text-gc-navy text-xs font-body font-semibold rounded-md"
+                        className="px-2.5 py-1 bg-white/90 backdrop-blur-sm text-gc-green-800 text-xs font-body font-semibold rounded-md"
                       >
                         {cat.nombre}
                       </span>
@@ -85,7 +85,7 @@ export default async function Noticias() {
               {/* Contenido */}
               <div className="p-5 lg:p-6">
                 {noticia.fechaPublicacion && (
-                  <time className="text-sm text-gc-navy/40 font-body">
+                  <time className="text-sm text-gc-green-800/40 font-body">
                     {format(
                       new Date(noticia.fechaPublicacion),
                       "d 'de' MMMM, yyyy",
@@ -94,11 +94,11 @@ export default async function Noticias() {
                   </time>
                 )}
 
-                <h3 className="text-lg font-display font-bold text-gc-navy mt-2 mb-3 line-clamp-2 group-hover:text-gc-gold-dark transition-colors">
+                <h3 className="text-lg font-display font-bold text-gc-green-800 mt-2 mb-3 line-clamp-2 group-hover:text-gc-gold-dark transition-colors">
                   {noticia.titulo}
                 </h3>
 
-                <p className="text-gc-navy/60 font-body text-sm leading-relaxed line-clamp-3">
+                <p className="text-gc-green-800/60 font-body text-sm leading-relaxed line-clamp-3">
                   {noticia.extracto}
                 </p>
               </div>

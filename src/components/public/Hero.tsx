@@ -11,7 +11,7 @@ export default function Hero({ nombre, slogan, mision }: HeroProps) {
       className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background — gradiente con textura sutil */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gc-navy-dark via-gc-navy to-gc-navy" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gc-green-900 via-gc-green-800 to-gc-green-800" />
 
       {/* Patrón decorativo sutil */}
       <div

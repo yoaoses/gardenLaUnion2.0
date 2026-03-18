@@ -39,7 +39,7 @@ export default function Convivencia({
   return (
     <section id="convivencia" className="py-12 sm:py-16 lg:py-20 xl:py-28 relative overflow-hidden">
       {/* Background decorativo */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gc-navy-dark via-gc-navy to-gc-navy" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gc-green-900 via-gc-green-800 to-gc-green-800" />
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{

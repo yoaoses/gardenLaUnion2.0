@@ -121,6 +121,54 @@ model ConfigSitio {
 }
 
 // ==================
+// EVENTOS
+// ==================
+
+model Evento {
+  id          String    @id @default(cuid())
+  nombre      String
+  slug        String    @unique
+  descripcion String?
+  recurrencia String    @default("anual")
+  activo      Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  ediciones   Edicion[]
+}
+
+model Edicion {
+  id            String        @id @default(cuid())
+  titulo        String
+  slug          String        @unique
+  extracto      String
+  contenido     String
+  imagenPortada String?
+  fecha         DateTime
+  destacada     Boolean       @default(false)
+  estado        NoticiaEstado @default(BORRADOR)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  eventoId      String
+  evento        Evento        @relation(fields: [eventoId], references: [id])
+  multimedia    Multimedia[]
+
+  @@index([estado, fecha])
+  @@index([eventoId])
+}
+
+model Multimedia {
+  id        String   @id @default(cuid())
+  tipo      String
+  url       String
+  thumbnail String?
+  titulo    String?
+  orden     Int      @default(0)
+  createdAt DateTime @default(now())
+  edicionId String
+  edicion   Edicion  @relation(fields: [edicionId], references: [id], onDelete: Cascade)
+}
+
+// ==================
 // CONTACTO
 // ==================
 

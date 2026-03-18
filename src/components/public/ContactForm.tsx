@@ -54,10 +54,10 @@ export default function ContactForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
-        <h4 className="text-lg font-display font-bold text-gc-navy mb-2">
+        <h4 className="text-lg font-display font-bold text-gc-green-800 mb-2">
           Mensaje enviado
         </h4>
-        <p className="text-gc-navy/60 font-body text-sm mb-6">
+        <p className="text-gc-green-800/60 font-body text-sm mb-6">
           Gracias por escribirnos. Te responderemos a la brevedad.
         </p>
         <button
@@ -106,7 +106,7 @@ export default function ContactForm() {
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="telefono" className="label-gc">
-            Teléfono <span className="text-gc-navy/30 text-xs">(opcional)</span>
+            Teléfono <span className="text-gc-green-800/30 text-xs">(opcional)</span>
           </label>
           <input
             id="telefono"

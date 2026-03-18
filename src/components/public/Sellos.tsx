@@ -54,10 +54,10 @@ export default function Sellos({ sellos }: SellosProps) {
                 <div className="w-16 h-16 rounded-2xl bg-gc-green-50 flex items-center justify-center mb-6 text-gc-green-dark">
                   {iconMap[sello.icono] || iconMap["globe"]}
                 </div>
-                <h3 className="text-xl lg:text-2xl font-display font-bold text-gc-navy mb-4">
+                <h3 className="text-xl lg:text-2xl font-display font-bold text-gc-green-800 mb-4">
                   {sello.titulo}
                 </h3>
-                <p className="text-gc-navy/70 font-body leading-relaxed">
+                <p className="text-gc-green-800/70 font-body leading-relaxed">
                   {sello.descripcion}
                 </p>
               </div>
