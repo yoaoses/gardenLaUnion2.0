@@ -1,8 +1,11 @@
+import Image from "next/image";
+
 interface Nivel {
   nombre: string;
   niveles: string;
   sede: string;
   descripcion: string;
+  imagen?: string;
 }
 
 interface NivelesProps {
@@ -34,7 +37,19 @@ export default function Niveles({ niveles, extras }: NivelesProps) {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-8 lg:mb-12">
           {niveles.map((nivel, i) => {
             return (
-              <div key={nivel.nombre} className={`card p-6 lg:p-8 ${nivelBorders[i % nivelBorders.length]}`}>
+              <div key={nivel.nombre} className={`card overflow-hidden ${nivelBorders[i % nivelBorders.length]}`}>
+                {nivel.imagen && (
+                  <div className="relative aspect-[2/1]">
+                    <Image
+                      src={nivel.imagen}
+                      alt={nivel.nombre}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  </div>
+                )}
+                <div className="p-6 lg:p-8">
                 <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border mb-4 bg-gc-green-50 text-gc-green-dark border-gc-green-100">
                   {nivel.niveles}
                 </div>
@@ -52,6 +67,7 @@ export default function Niveles({ niveles, extras }: NivelesProps) {
                       d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                   </svg>
                   {nivel.sede}
+                </div>
                 </div>
               </div>
             );

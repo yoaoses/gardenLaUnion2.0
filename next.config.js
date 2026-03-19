@@ -13,7 +13,9 @@ const nextConfig = {
     // Formatos modernos
     formats: ['image/webp', 'image/avif'],
     // Dominios permitidos para imágenes remotas (agregar si se usa CDN)
-    remotePatterns: [],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'picsum.photos' },
+    ],
     // Tamaños de dispositivo para responsive
     deviceSizes: [375, 640, 750, 828, 1080, 1200],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],

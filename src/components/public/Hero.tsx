@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface HeroProps {
   nombre: string;
   slogan: string;
@@ -10,8 +12,16 @@ export default function Hero({ nombre, slogan, mision }: HeroProps) {
       id="inicio"
       className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background — gradiente con textura sutil */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gc-green-900 via-gc-green-800 to-gc-green-800" />
+      {/* Background — foto con overlay */}
+      <Image
+        src="https://picsum.photos/seed/garden-hero/1920/1080"
+        alt=""
+        fill
+        priority
+        className="object-cover"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-gc-green-900/90 via-gc-green-800/85 to-gc-green-800/80" />
 
       {/* Patrón decorativo sutil */}
       <div

@@ -384,6 +384,7 @@ async function main() {
           sede: "Los Carrera 387",
           descripcion:
             "Primeros pasos en un ambiente seguro y estimulante, con énfasis en el juego, la creatividad y los valores.",
+          imagen: "https://picsum.photos/seed/garden-parvularia/600/300",
         },
         {
           nombre: "Educación Básica",
@@ -391,6 +392,7 @@ async function main() {
           sede: "Los Carrera 387",
           descripcion:
             "Formación académica sólida con inglés desde primer año, talleres de música, arte y deporte.",
+          imagen: "https://picsum.photos/seed/garden-basica/600/300",
         },
         {
           nombre: "Educación Básica - Media",
@@ -398,6 +400,7 @@ async function main() {
           sede: "Caupolicán 967",
           descripcion:
             "Transición acompañada con mayor autonomía, preparación para la enseñanza media y talleres especializados.",
+          imagen: "https://picsum.photos/seed/garden-nivel-media/600/300",
         },
         {
           nombre: "Educación Media",
@@ -405,6 +408,7 @@ async function main() {
           sede: "Caupolicán 967",
           descripcion:
             "Preparación para la educación superior con talleres de Administración, Introducción al Derecho, y formación integral.",
+          imagen: "https://picsum.photos/seed/garden-media/600/300",
         },
       ]),
       tipo: "json",
@@ -503,6 +507,7 @@ async function main() {
         fecha: new Date("2025-10-21"),
         destacada: true,
         estado: NoticiaEstado.PUBLICADA,
+        imagenPortada: "https://picsum.photos/seed/garden-gala/1200/600",
       },
     },
     {
@@ -520,6 +525,7 @@ async function main() {
         fecha: new Date("2025-08-15"),
         destacada: false,
         estado: NoticiaEstado.PUBLICADA,
+        imagenPortada: "https://picsum.photos/seed/garden-spelling/600/400",
       },
     },
     {
@@ -537,6 +543,7 @@ async function main() {
         fecha: new Date("2025-07-04"),
         destacada: false,
         estado: NoticiaEstado.PUBLICADA,
+        imagenPortada: "https://picsum.photos/seed/garden-bingo/600/400",
       },
     },
     {
@@ -554,6 +561,7 @@ async function main() {
         fecha: new Date("2025-09-10"),
         destacada: false,
         estado: NoticiaEstado.PUBLICADA,
+        imagenPortada: "https://picsum.photos/seed/garden-deporte/600/400",
       },
     },
     {
@@ -571,6 +579,7 @@ async function main() {
         fecha: new Date("2025-10-16"),
         destacada: false,
         estado: NoticiaEstado.PUBLICADA,
+        imagenPortada: "https://picsum.photos/seed/garden-profesor/600/400",
       },
     },
   ];
@@ -589,7 +598,7 @@ async function main() {
 
     await prisma.edicion.upsert({
       where: { slug: eventoData.edicion.slug },
-      update: {},
+      update: { imagenPortada: eventoData.edicion.imagenPortada },
       create: {
         ...eventoData.edicion,
         eventoId: evento.id,
