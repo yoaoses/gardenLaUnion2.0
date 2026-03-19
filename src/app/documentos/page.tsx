@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getConfig } from "@/lib/config";
 import Navbar from "@/components/public/Navbar";
-import Footer from "@/components/public/Footer";
 import DocumentViewer, { type Documento } from "@/components/public/DocumentViewer";
 
 export const metadata: Metadata = {
@@ -157,52 +156,17 @@ export default async function DocumentosPage() {
   const config = await getConfig();
 
   const nombre = config["institucional.nombre"] || "Garden College";
-  const sedes = [
-    { telefono: config["contacto.sede_basica.telefono"] || "" },
-    { telefono: config["contacto.sede_media.telefono"] || "" },
-  ];
+  const telefono = [
+    config["contacto.sede_basica.telefono"],
+    config["contacto.sede_media.telefono"],
+  ]
+    .filter(Boolean)
+    .join(" | ");
 
   return (
     <>
-      <Navbar
-        nombre={nombre}
-        telefono={sedes.map((s) => s.telefono).filter(Boolean).join(" | ")}
-        variant="solid"
-      />
-
-      <main className="pt-16 lg:pt-20">
-        {/* Header de página */}
-        <div className="bg-gc-navy text-white py-8 lg:py-10">
-          <div className="container-gc">
-            <nav className="text-sm font-body text-white/50 mb-3">
-              <a href="/" className="hover:text-white/80 transition-colors">
-                Inicio
-              </a>
-              <span className="mx-2">/</span>
-              <span className="text-white/80">Documentos</span>
-            </nav>
-            <h1 className="font-display font-bold text-2xl lg:text-3xl text-white mb-1">
-              Centro de Documentación
-            </h1>
-            <p className="font-body text-white/60 text-sm lg:text-base">
-              Planes, reglamentos y protocolos de Garden College
-            </p>
-          </div>
-        </div>
-
-        {/* Visor de documentos */}
-        <DocumentViewer documentos={documentos} categorias={categorias} />
-      </main>
-
-      <Footer
-        nombre={nombre}
-        corporacion={config["institucional.corporacion"] || "Corporación Educacional Filadelfia Garden"}
-        redes={{
-          facebook: config["redes.facebook"],
-          instagram: config["redes.instagram"],
-          youtube: config["redes.youtube"],
-        }}
-      />
+      <Navbar nombre={nombre} telefono={telefono} variant="solid" />
+      <DocumentViewer documentos={documentos} categorias={categorias} />
     </>
   );
 }
