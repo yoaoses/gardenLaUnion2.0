@@ -139,6 +139,27 @@ export default function Convivencia({
             </div>
           )}
 
+          {/* ── BLOQUE CTA: LINK A /convivencia ── */}
+          <div className="bg-gc-green-800 border-t border-gc-green-100/10 px-6 py-7 lg:py-8">
+            <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5">
+              <div className="flex items-center gap-3">
+                <span className="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-gc-gold animate-pulse" />
+                <p className="text-gc-green-100/60 font-body text-base text-center sm:text-left">
+                  Descubre cómo construimos convivencia
+                </p>
+              </div>
+              <a
+                href="/convivencia"
+                className="btn-primary w-full sm:w-auto flex-shrink-0 gap-2"
+              >
+                Conoce nuestra historia
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
           {/* ── BLOQUE 4: TESTIMONIO ── */}
           {hasTestimonio && (
             <div className="bg-gc-green-900 px-6 py-10 lg:py-12">

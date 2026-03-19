@@ -5,6 +5,7 @@ import QuienesSomos from "@/components/public/QuienesSomos";
 import Sellos from "@/components/public/Sellos";
 import Convivencia from "@/components/public/Convivencia";
 import EventosDestacados from "@/components/public/EventosDestacados";
+import Galeria from "@/components/public/Galeria";
 import Niveles from "@/components/public/Niveles";
 import Noticias from "@/components/public/Noticias";
 import Admision from "@/components/public/Admision";
@@ -85,6 +86,8 @@ export default async function HomePage() {
         />
 
         <EventosDestacados />
+
+        <Galeria />
 
         <Niveles
           niveles={config["niveles.info"] || []}

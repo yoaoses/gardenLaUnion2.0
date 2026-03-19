@@ -328,6 +328,48 @@ async function main() {
       orden: 5,
     },
     {
+      clave: "convivencia.campana",
+      valor: JSON.stringify({
+        titulo: "Un Colegio Sin Bullying",
+        descripcion:
+          "El CGPA lideró esta campaña que involucró a toda la comunidad escolar — docentes, apoderados y estudiantes de todos los niveles. El resultado: cero denuncias formales de bullying durante todo el año 2025. [Placeholder: acá va la historia completa de la campaña — cómo nació, qué actividades se hicieron, quiénes participaron, cuántos alumnos se comprometieron y cómo se mantiene viva la cultura de respeto que generó.]",
+        ano: "2025",
+      }),
+      tipo: "json",
+      grupo: "convivencia",
+      orden: 6,
+    },
+    {
+      clave: "convivencia.testimonios",
+      valor: JSON.stringify([
+        {
+          texto:
+            "Lo que más valoro de Garden College es que mi hija llega contenta. Sé que está en un lugar donde la cuidan y la respetan.",
+          nombre: "María González",
+          rol: "Apoderada de 3° básico",
+          iniciales: "MG",
+        },
+        {
+          texto:
+            "[Placeholder] Segundo testimonio de un docente o directivo sobre el clima de convivencia, cómo se trabaja el respeto en el aula y el rol de los valores cristianos en la cultura escolar.",
+          nombre: "Nombre Apellido",
+          rol: "Docente Garden College",
+          iniciales: "NA",
+        },
+      ]),
+      tipo: "json",
+      grupo: "convivencia",
+      orden: 7,
+    },
+    {
+      clave: "convivencia.enfoque_completo",
+      valor:
+        "En Garden College creemos que un niño que se siente seguro, aprende mejor. Nuestro enfoque de convivencia nace de un principio simple: tratar al otro como queremos ser tratados. Eso se enseña, se practica y se vive cada día.\n\nEl fundamento de nuestra convivencia viene de los valores cristianos: empatía, respeto, servicio al prójimo. Pero no excluimos — acogemos. Cada familia, cada estudiante, es parte de esta comunidad independientemente de su credo.\n\nNuestro programa de convivencia escolar trabaja en tres dimensiones: prevención (formación valórica desde pre-kínder), acompañamiento (equipos de orientación y PIE) y comunidad (participación activa del CGPA en campañas y actividades). El resultado es un ambiente donde las diferencias se respetan y los conflictos se resuelven con diálogo.",
+      tipo: "richtext",
+      grupo: "convivencia",
+      orden: 8,
+    },
+    {
       clave: "convivencia.pilares",
       valor: JSON.stringify([
         {
@@ -371,6 +413,29 @@ async function main() {
       valor: "Lo que vivimos",
       tipo: "text",
       grupo: "eventos",
+      orden: 3,
+    },
+
+    // Galería
+    {
+      clave: "galeria.titulo",
+      valor: "Galería",
+      tipo: "text",
+      grupo: "galeria",
+      orden: 1,
+    },
+    {
+      clave: "galeria.badge",
+      valor: "Momentos Garden",
+      tipo: "text",
+      grupo: "galeria",
+      orden: 2,
+    },
+    {
+      clave: "galeria.subtitulo",
+      valor: "Los mejores momentos de nuestra comunidad",
+      tipo: "text",
+      grupo: "galeria",
       orden: 3,
     },
 
@@ -580,6 +645,26 @@ async function main() {
         destacada: false,
         estado: NoticiaEstado.PUBLICADA,
         imagenPortada: "https://picsum.photos/seed/garden-profesor/600/400",
+      },
+    },
+    {
+      nombre: "Fiestas Patrias",
+      slug: "fiestas-patrias",
+      descripcion:
+        "Una semana completa de celebración de nuestra identidad chilena",
+      recurrencia: "anual",
+      edicion: {
+        titulo:
+          "Fiestas Patrias 2025 — Una semana de chilenidad en Garden College",
+        slug: "fiestas-patrias-2025",
+        extracto:
+          "Ramadas, cueca, empanadas y parrillada. Toda la comunidad Garden celebró las fiestas patrias con una semana de actividades que fortalecen nuestra identidad y unión.",
+        contenido:
+          "<p>Durante la semana del 15 al 19 de septiembre, Garden College se vistió de colores patrios para celebrar la identidad chilena de la manera más auténtica: en comunidad.</p><p>Los cursos compitieron en el concurso de empanadas, donde apoderados y estudiantes pusieron a prueba sus mejores recetas familiares. Las ramadas montadas por cada nivel llenaron los patios de olor a chilenería, con muelles, sopaipillas y bebidas tradicionales servidas con orgullo.</p><p>El Departamento de Música y Artes organizó presentaciones de cueca, con parejas de todos los niveles desde pre-kínder hasta cuarto medio. Ver a los más pequeños bailar con sus trajes típicos fue uno de los momentos más emotivos de la semana, demostrando que la tradición se aprende y se vive desde los primeros años.</p><p>El cierre de semana fue una gran convivencia familiar con parrillada, música en vivo y un show artístico que reunió a toda la comunidad Garden en una tarde de celebración, orgullo y chilenidad compartida. Una semana que reafirma que ser chileno también se enseña.</p>",
+        fecha: new Date("2025-09-19"),
+        destacada: false,
+        estado: NoticiaEstado.PUBLICADA,
+        imagenPortada: "https://picsum.photos/seed/garden-patrias/1200/600",
       },
     },
   ];
